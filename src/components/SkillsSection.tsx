@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Globe, Shield, Terminal, Database, Lock } from "lucide-react";
+import { Code2, Globe, Shield, Terminal, Database } from "lucide-react";
 
 const skills = [
   {
@@ -33,12 +33,6 @@ const skills = [
     level: 75,
     icon: Database,
     description: "SQL, NoSQL & data management",
-  },
-  {
-    name: "Network Security",
-    level: 78,
-    icon: Lock,
-    description: "Firewall configuration & network protection",
   },
 ];
 
