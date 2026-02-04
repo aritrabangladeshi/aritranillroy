@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Facebook, Instagram } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Facebook, Twitter } from "lucide-react";
 import profileImage from "@/assets/profile-aritra.jpg";
 
 const HeroSection = () => {
@@ -81,7 +81,7 @@ const HeroSection = () => {
               <span className="text-sm text-muted-foreground">Follow me:</span>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/aritranillroy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
@@ -89,12 +89,12 @@ const HeroSection = () => {
                   <Facebook size={20} />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://x.com/aritraoffical"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
                 >
-                  <Instagram size={20} />
+                  <Twitter size={20} />
                 </a>
                 <a
                   href="https://linkedin.com"
