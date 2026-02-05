@@ -21,6 +21,22 @@ const ThreadsIcon = ({ size = 22 }: { size?: number }) => (
   </svg>
 );
 
+// Custom Strava icon
+const StravaIcon = ({ size = 22 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" />
+  </svg>
+);
+
 const contactInfo = [
   {
     icon: Mail,
@@ -48,6 +64,7 @@ const socialLinks = [
   { icon: Twitter, href: "https://x.com/aritraoffical", label: "Twitter" },
   { icon: ThreadsIcon, href: "https://www.threads.com/@aritranillroy", label: "Threads" },
   { icon: Github, href: "https://github.com/aritrabangladeshi", label: "GitHub" },
+  { icon: StravaIcon, href: "https://www.strava.com/athletes/141791699", label: "Strava" },
 ];
 
 const ContactSection = () => {
