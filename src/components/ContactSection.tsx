@@ -4,6 +4,23 @@ import { useRef, useState } from "react";
 import { Mail, Phone, MapPin, Send, Facebook, Twitter, Instagram, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+// Custom Threads icon
+const ThreadsIcon = ({ size = 22 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M12 16c-2.5 0-4-1.5-4-4s1.5-4 4-4c3 0 4.5 2 4.5 4.5c0 1.93-1 3.5-2.5 3.5s-2-.93-2-2c0-.75.25-1.5.75-2" />
+    <circle cx="12" cy="12" r="10" />
+  </svg>
+);
+
 const contactInfo = [
   {
     icon: Mail,
@@ -29,6 +46,7 @@ const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/aritranillroy", label: "Facebook" },
   { icon: Instagram, href: "https://www.instagram.com/aritranillroy/", label: "Instagram" },
   { icon: Twitter, href: "https://x.com/aritraoffical", label: "Twitter" },
+  { icon: ThreadsIcon, href: "https://www.threads.com/@aritranillroy", label: "Threads" },
   { icon: Github, href: "https://github.com/aritrabangladeshi", label: "GitHub" },
 ];
 
