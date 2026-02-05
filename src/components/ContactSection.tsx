@@ -7,7 +7,7 @@ import emailjs from "@emailjs/browser";
 
 // EmailJS configuration (public keys - safe to expose)
 const EMAILJS_SERVICE_ID = "service_e4e0eyh";
-const EMAILJS_TEMPLATE_ID = "template_jbfbrpp";
+const EMAILJS_TEMPLATE_ID = "template_p75ywnm";
 const EMAILJS_PUBLIC_KEY = "_4xpPJCfCFOT-qvr2";
 
 // Custom Threads icon
