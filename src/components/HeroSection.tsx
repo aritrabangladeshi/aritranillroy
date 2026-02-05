@@ -19,6 +19,22 @@ const ThreadsIcon = ({ size = 20 }: { size?: number }) => (
   </svg>
 );
 
+// Custom Strava icon
+const StravaIcon = ({ size = 20 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" />
+  </svg>
+);
+
 const HeroSection = () => {
   return (
     <section
@@ -136,6 +152,14 @@ const HeroSection = () => {
                   className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
                 >
                   <Github size={20} />
+                </a>
+                <a
+                  href="https://www.strava.com/athletes/141791699"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
+                >
+                  <StravaIcon size={20} />
                 </a>
               </div>
             </motion.div>
