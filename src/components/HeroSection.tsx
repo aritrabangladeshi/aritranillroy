@@ -2,6 +2,23 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Instagram, Facebook, Twitter } from "lucide-react";
 import profileImage from "@/assets/profile-aritra.jpg";
 
+// Custom Threads icon
+const ThreadsIcon = ({ size = 20 }: { size?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M12 16c-2.5 0-4-1.5-4-4s1.5-4 4-4c3 0 4.5 2 4.5 4.5c0 1.93-1 3.5-2.5 3.5s-2-.93-2-2c0-.75.25-1.5.75-2" />
+    <circle cx="12" cy="12" r="10" />
+  </svg>
+);
+
 const HeroSection = () => {
   return (
     <section
@@ -103,6 +120,14 @@ const HeroSection = () => {
                   className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
                 >
                   <Twitter size={20} />
+                </a>
+                <a
+                  href="https://www.threads.com/@aritranillroy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
+                >
+                  <ThreadsIcon size={20} />
                 </a>
                 <a
                   href="https://github.com/aritrabangladeshi"
