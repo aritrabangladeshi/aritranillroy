@@ -27,8 +27,8 @@ const contactInfo = [
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/aritranillroy", label: "Facebook" },
-  { icon: Twitter, href: "https://x.com/aritraoffical", label: "Twitter" },
   { icon: Instagram, href: "https://www.instagram.com/aritranillroy/", label: "Instagram" },
+  { icon: Twitter, href: "https://x.com/aritraoffical", label: "Twitter" },
   { icon: Github, href: "https://github.com/aritrabangladeshi", label: "GitHub" },
 ];
 
