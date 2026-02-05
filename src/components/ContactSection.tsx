@@ -6,7 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 
 // EmailJS configuration (public keys - safe to expose)
-const EMAILJS_SERVICE_ID = "service_nto6vp2";
+const EMAILJS_SERVICE_ID = "service_e4e0eyh";
 const EMAILJS_TEMPLATE_ID = "template_nnkiqvi";
 const EMAILJS_PUBLIC_KEY = "_4xpPJCfCFOT-qvr2";
 
