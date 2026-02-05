@@ -1,5 +1,11 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Award, ExternalLink } from "lucide-react";
+import { Award, X, ZoomIn } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 import certAiAgents from "@/assets/cert-ai-agents-google.png";
 import certDigitalLiteracy from "@/assets/cert-digital-literacy.jpg";
@@ -45,7 +51,11 @@ const certificates = [
   },
 ];
 
+type Certificate = typeof certificates[0];
+
 const CertificationsSection = () => {
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+
   return (
     <section id="certifications" className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-6">
@@ -78,7 +88,8 @@ const CertificationsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
+              onClick={() => setSelectedCert(cert)}
+              className="group relative bg-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 cursor-pointer"
             >
               {/* Certificate Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -93,6 +104,14 @@ const CertificationsSection = () => {
                 <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-primary/90 text-primary-foreground text-xs font-medium">
                   {cert.category}
                 </span>
+
+                {/* Hover Overlay for View */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-background/40">
+                  <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium shadow-lg">
+                    <ZoomIn size={16} />
+                    View Certificate
+                  </span>
+                </div>
               </div>
 
               {/* Certificate Info */}
@@ -103,18 +122,55 @@ const CertificationsSection = () => {
                 <p className="text-sm text-muted-foreground mb-2">{cert.issuer}</p>
                 <p className="text-xs text-muted-foreground/70">{cert.date}</p>
               </div>
-
-              {/* Hover Overlay for View */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium">
-                  <ExternalLink size={16} />
-                  View Certificate
-                </span>
-              </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      <Dialog open={!!selectedCert} onOpenChange={() => setSelectedCert(null)}>
+        <DialogContent className="max-w-4xl w-[95vw] p-0 bg-background/95 backdrop-blur-md border-border overflow-hidden">
+          <DialogTitle className="sr-only">
+            {selectedCert?.title || "Certificate"}
+          </DialogTitle>
+          
+          {selectedCert && (
+            <div className="relative">
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="absolute top-3 right-3 z-10 p-2 rounded-full bg-background/80 hover:bg-background text-foreground transition-colors"
+              >
+                <X size={20} />
+              </button>
+
+              {/* Certificate Image */}
+              <div className="relative">
+                <img
+                  src={selectedCert.image}
+                  alt={selectedCert.title}
+                  className="w-full h-auto max-h-[80vh] object-contain"
+                />
+              </div>
+
+              {/* Certificate Info */}
+              <div className="p-6 border-t border-border">
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  {selectedCert.title}
+                </h3>
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                    {selectedCert.category}
+                  </span>
+                  <span>{selectedCert.issuer}</span>
+                  <span>•</span>
+                  <span>{selectedCert.date}</span>
+                </div>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
