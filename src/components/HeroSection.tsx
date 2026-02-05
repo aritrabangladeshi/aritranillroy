@@ -89,20 +89,20 @@ const HeroSection = () => {
                   <Facebook size={20} />
                 </a>
                 <a
-                  href="https://x.com/aritraoffical"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
-                >
-                  <Twitter size={20} />
-                </a>
-                <a
                   href="https://www.instagram.com/aritranillroy/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
                 >
                   <Instagram size={20} />
+                </a>
+                <a
+                  href="https://x.com/aritraoffical"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg bg-secondary hover:bg-primary/20 hover:text-primary transition-all duration-200"
+                >
+                  <Twitter size={20} />
                 </a>
                 <a
                   href="https://github.com/aritrabangladeshi"
