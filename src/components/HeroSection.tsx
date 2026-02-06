@@ -192,20 +192,21 @@ const HeroSection = () => {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <motion.a
+          href="#about"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 cursor-pointer hover:text-primary transition-colors"
         >
-          <span className="text-sm text-muted-foreground">Scroll Down</span>
+          <span className="text-sm text-muted-foreground hover:text-primary transition-colors">Scroll Down</span>
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
             <ArrowDown className="text-primary" size={24} />
           </motion.div>
-        </motion.div>
+        </motion.a>
       </div>
     </section>
   );
